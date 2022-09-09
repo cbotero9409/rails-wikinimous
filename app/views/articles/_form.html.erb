@@ -1,0 +1,13 @@
+<% title = article.new_record? ? 'New article' : 'Edit article' %>
+<h1><%= title %></h1>
+<%= form_with model: article do |f| %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :content %>
+    <%= f.text_area(:content, size: '50x3', class: 'form-control') %>
+  </div>
+  <%= f.submit(class: 'btn btn-primary mt-3') %>
+<% end %>
